@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+     
+    <link href="css/style.css" rel="stylesheet">
+          <link href="css/bootstrap.min.css" rel="stylesheet">
+       <link href="css/xeditable.css" rel="stylesheet">
+     
+
+      
+    
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+      
+      <script src="lib/ionic/js/angular/angular-resource.js"></script>
+      <script src="lib/ionic/js/angular/angular-xeditable.js"></script>
+      
+      
+      
+      
+     
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+      <script src="js/controllers.js"></script>
+      <script src="js/services.js"></script>
+     
+  </head>
+  <body ng-app="starter"ng-controller="myCtrl">
+
+    
+
+   <div class="bar bar-header bar-light ">
+    <form name="form" ng-submit="form.$valid &&myFunc()"> 
+    <label class="item-input" >
+      
+         <input type="text" placeholder="Add Task"ng-model="name"  required>
+    
+      
+         
+       <button class="button icon icon-left  ion-plus-circled"type="submit">
+   
+</button
+        </form>  
+</div>  
+    
+      <ion-content class="has-header"> 
+         
+         <ion-list>
+              
+            <ion-item ng-repeat="post in posts">
+    
+      <p class="item item-icon-right" >
+        
+       <span editable-text="post.title" ng-click="updateUsers({{post.id}})"  onbeforesave="updateUser($data)">
+      {{post.title||'empty'}}
+        
+     </span> 
+                
+    
+                  
+          
+      <i class="icon icon-right icon assertive ion-trash-a" ng-click="removeItem( {{post.id}})" ></i>
+          
+      </p>
+      
+           </ion-item>
+    
+  
+         </ion-list>
+          
+      </ion-content>
+
+        
+       
+</ion-pane>
+        
+  </body>
+</html>
